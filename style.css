@@ -1,0 +1,227 @@
+body {
+    background-color: #0b0b0e;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu-bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Zonas de los botones del menú */
+.hotspot-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px;
+    height: 50px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 10;
+}
+
+#start-btn {
+    top: 71.5%; 
+}
+
+#options-btn {
+    top: 84.5%; 
+}
+
+.hotspot-btn:hover {
+    background-color: rgba(255, 215, 0, 0.2);
+    border: 2px solid rgba(255, 215, 0, 0.8);
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Pantalla de controles */
+#options-screen {
+    background-color: rgba(10, 5, 20, 0.95);
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-box {
+    background: #1a0926;
+    border: 4px solid #ffd700;
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+/* Caballero Dorado más pequeño alineado a la izquierda en la intro */
+.hero-intro-container {
+    position: absolute;
+    bottom: 15px;
+    left: 10%;
+    z-index: 16;
+    height: 38px; /* Tamaño más pequeño y compacto */
+    display: flex;
+    align-items: flex-end;
+    transition: left 0.3s ease; /* Permite mover al personaje después */
+}
+
+.hero-intro-sprite {
+    height: 140px; /* Tamaño proporcional más pequeño */
+    image-rendering: pixelated;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.9));
+}
+
+/* Pergamino Tradicional Gráfico con animación de difuminado */
+.scroll-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 620px;
+    max-width: 60%;
+    height: 320px;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Clase que difumina el pergamino al terminar la intro */
+.scroll-wrapper.fade-out {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+    pointer-events: none;
+}
+
+.scroll-bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 1;
+    filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.8));
+}
+
+.scroll-content {
+    position: relative;
+    z-index: 2;
+    width: 75%;
+    padding: 20px;
+    color: #3b220c;
+    text-align: center;
+}
+
+.scroll-header {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #7a4f27;
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4a2e18;
+}
+
+.scroll-body {
+    font-size: 15px;
+    line-height: 1.5;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.scroll-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-btn {
+    background-color: #7a4f27;
+    color: #f4e8c1;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 18px;
+    border: 2px solid #4a2e18;
+    cursor: pointer;
+    box-shadow: 0px 2px 0px #2b1704;
+}
+
+.scroll-btn:hover {
+    background-color: #9c6636;
+}
+
+/* Capa de transición de oscuridad */
+.fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
+    z-index: 100;
+}
+
+.fade-overlay.active {
+    opacity: 1;
+}
+
+.pixel-btn {
+    background-color: #4b2675;
+    color: #ffd700;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    padding: 8px 25px;
+    border: 3px solid #ffffff;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+footer {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    color: #aaaaaa;
+    z-index: 30;
+    pointer-events: none;
+}

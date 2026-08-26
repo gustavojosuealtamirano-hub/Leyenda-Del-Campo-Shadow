@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leyenda del Campo: Shadow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        
+        <!-- 1. Menú Principal -->
+        <div id="menu-screen" class="screen">
+            <video autoplay muted loop playsinline class="menu-bg-video">
+                <source src="assets/menu_animation.mp4" type="video/mp4">
+            </video>
+            <div id="start-btn" class="hotspot-btn"></div>
+            <div id="options-btn" class="hotspot-btn"></div>
+        </div>
+
+        <!-- 2. Pantalla de Opciones / Controles -->
+        <div id="options-screen" class="screen hidden">
+            <div class="content-box">
+                <h2>CONTROLES DEL JUEGO</h2>
+                <p>⬅️ Flecha Izquierda: Moverse a la Izquierda</p>
+                <p>➡️ Flecha Derecha: Moverse a la Derecha</p>
+                <p>⚔️ Barra Espaciadora: Atacar con la Espada</p>
+                <p>🛡️ Tecla Z: Usar Escudo</p>
+                <button id="close-options-btn" class="pixel-btn">VOLVER</button>
+            </div>
+        </div>
+
+        <!-- 3. Primer Escenario del Bosque / Introducción -->
+        <div id="intro-screen" class="screen hidden">
+            <img src="assets/intro_bg.png" alt="Fondo de campo" class="menu-bg-video">
+            
+            <!-- Caballero Dorado más pequeño alineado a la izquierda -->
+            <div class="hero-intro-container">
+                <img id="player-sprite" src="assets/shadow_sprite.png" alt="Caballero Dorado" class="hero-intro-sprite">
+            </div>
+
+            <!-- Pergamino Tradicional con animación de difuminado -->
+            <div id="scroll-wrapper" class="scroll-wrapper">
+                <img src="assets/scroll_bg.png" alt="Pergamino" class="scroll-bg-img">
+                <div class="scroll-content">
+                    <div class="scroll-header">Crónicas del Reino</div>
+                    <div class="scroll-body">
+                        <p id="story-text">Cargando historia...</p>
+                    </div>
+                    <div class="scroll-footer">
+                        <button id="next-story-btn" class="scroll-btn">Siguiente ➔</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Efecto de oscuridad -->
+        <div id="fade-overlay" class="fade-overlay"></div>
+
+    </div>
+
+    <!-- Audios del juego -->
+    <audio id="bg-music" src="assets/epic_music.mp3" loop></audio>
+    <audio id="intro-music" src="assets/intro_music.mp3" loop></audio>
+
+    <footer>
+        <p>© 2026 Todos los derechos reservados. Creado por: INTEGRANTE 1, INTEGRANTE 2, INTEGRANTE 3</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
